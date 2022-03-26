@@ -1,0 +1,157 @@
+@import "variables.css";
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  -webkit-print-color-adjust:exact;
+}
+
+html, body {
+  font-family: 'Red Hat Display', sans-serif;
+  height: 100%;
+  font-size: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+h1, p {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+.overlay-image {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  background-image: url("/images/pattern-background-mobile.svg");
+  background-color: var(--pale-blue);
+  background-repeat: no-repeat;
+  z-index: -1;
+}
+
+@media (min-width: 376px) {
+  .overlay-image {
+    background-image: url("/images/pattern-background-desktop.svg");
+    background-size: contain;
+  }
+}
+
+main {
+  /* height: 95vh; */
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 1.5625rem;
+}
+
+.main-container {
+  max-width: 375px;
+}
+
+.main-container__hero-image {
+  border-radius: 0.9375rem 0.9375rem 0 0;
+}
+
+.main-container__content {
+  padding: 1.5625rem 0;
+  background-color: white;
+  text-align: center;
+  border-radius: 0 0 0.9375rem 0.9375rem;
+}
+
+.main-container__content h1 {
+  font-weight: 900;
+}
+
+.main-container__description {
+  padding: 0.9375rem 1.875rem;
+  line-height: 1.5;
+  color: var(--desaturated-blue);
+}
+
+.main-container__info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--very-pale-blue);
+  width: 85%;
+  margin: auto;
+  border-radius: 0.625rem;
+  padding: 0.9375rem 0.9375rem;
+}
+
+.info-content {
+  margin-left: -1.25rem;
+  text-align: left;
+}
+
+@media (min-width: 376px) {
+  .info-content {
+    margin-left: -3rem;
+  }
+}
+
+.info-plan {
+  font-weight: 900;
+}
+
+.info-price {
+  color: var(--desaturated-blue);
+}
+
+.info-cta button {
+  background: none;
+  border: none;
+  padding: 0;
+  text-decoration: underline;
+  color: var(--bright-blue);
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.main-container__cta {
+  margin-top: 1.25rem;
+}
+
+.payment-btn {
+  background-color: var(--bright-blue);
+  border: none;
+  width: 85%;
+  color: white;
+  font-weight: 700;
+  padding: 0.9375rem 0;
+  border-radius: 0.625rem;
+  box-shadow: 0 0.9375rem 0.9375rem var(--bright-blue-shadow);
+  margin-bottom: 1.25rem;
+}
+
+.cancel-btn {
+  background: none;
+  border: none;
+  font-weight: 700;
+  color: var(--desaturated-blue);
+}
+
+.cancel-btn:hover {
+  cursor: pointer;
+  color: black;
+}
+
+.info-cta button:hover,
+.payment-btn:hover {
+  cursor: pointer;
+  opacity: 0.6;
+  text-decoration: none;
+}
+
+.attribution {
+  margin-top: 30px;
+}
